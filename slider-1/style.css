@@ -60,7 +60,7 @@ header nav a {
   text-shadow: 0 5px 10px #000;
 }
 
-.slider .list .item .title {
+.slider .list .item .detail .title {
   font-size: 1rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -68,7 +68,7 @@ header nav a {
   margin-bottom: 0.6rem;
 }
 
-.slider .list .item .name {
+.slider .list .item .detail .name {
   font-weight: 900;
   text-transform: uppercase;
   font-size: 3.5rem;
@@ -81,17 +81,17 @@ header nav a {
   text-shadow: none;
 }
 
-.slider .list .item figure {
+.slider .list .item .detail figure {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.slider .list .item figure img {
+.slider .list .item .detail figure img {
   width: 2.4rem;
 }
 
-.slider .list .item figure figcaption {
+.slider .list .item .detail figure figcaption {
   text-transform: uppercase;
   font-size: 0.8rem;
   font-weight: 500;
