@@ -138,7 +138,7 @@ header nav a {
   height: 220px;
   flex-shrink: 0;
   position: relative;
-}
+}  
 
 .thumbnail .item img {
   width: 100%;
@@ -177,8 +177,9 @@ header nav a {
   width: 300px;
   max-width: 30%;
   align-items: center;
+  display: flex;
   gap: 0.8rem;
-  z-index: 99;
+  z-index: 1;
 }
 
 .arrows button {
@@ -204,8 +205,8 @@ header nav a {
   z-index: 1;
 }
 
-.slider .list .item:nth-child(1) .title,
 .slider .list .item:nth-child(1) figure,
+.slider .list .item:nth-child(1) .title,
 .slider .list .item:nth-child(1) .name,
 .slider .list .item:nth-child(1) .desc,
 .slider .list .item:nth-child(1) .more {
@@ -224,6 +225,9 @@ header nav a {
 }
 
 .slider .list .item:nth-child(1) .title {
+  animation-delay: 1s;
+}
+.slider .list .item:nth-child(1) .name {
   animation-delay: 1.2s;
 }
 .slider .list .item:nth-child(1) figure {
@@ -240,9 +244,9 @@ header nav a {
 .slider.next .list .item:nth-child(1) > img {
   width: 150px;
   height: 220px;
-  left: 50%;
-  bottom: 50%;
   position: absolute;
+  left: 50%;
+  bottom: 50px;
   border-radius: 15px;
   animation: growImage 0.5s linear 1 forwards;
 }
@@ -283,11 +287,11 @@ header nav a {
 }
 
 /* Prev btn */
-.slide.prev .thumbnail .item:nth-child(2) {
+.slider.prev .thumbnail .item:nth-child(2) {
   z-index: 2;
 }
 
-.slide.prev .thumbnail .item:nth-child(2) > img {
+.slider.prev .thumbnail .item:nth-child(2) > img {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -304,7 +308,7 @@ header nav a {
   }
 }
 
-.slide.prev .thumbnail .item:nth-child(1) {
+.slider.prev .thumbnail .item:nth-child(1) {
   width: 0;
   overflow: hidden;
   opacity: 0;
@@ -325,4 +329,43 @@ header nav a {
         filter: blur(20px);
         opacity: 0;
     }
+}
+
+.slider.next .arrows button,
+.slider.prev .arrows button{
+  pointer-events: none;
+}
+
+.loading-bar{
+  width: 0%;
+  height: 5px;
+  background-color: #f80;
+  position: absolute;
+  z-index: 999;
+  left: 0;
+  top: 0;
+}
+
+.slider.next .loading-bar,
+.slider.prev .loading-bar{
+  width: 100%;
+  animation: loadingTime 2s linear 1 forwards;
+}
+
+@keyframes loadingTime {
+  to{
+    width: 0;
+  }
+}
+
+/* Mobil */
+@media screen and (max-width: 678px) {
+  .slider .list .item .detail .name{
+    font-size: 2.8rem;
+    line-height: 2.8rem;
+  }
+
+  .slider .list .item .detail .desc{
+    font-size: 0.8rem;
+  }
 }
